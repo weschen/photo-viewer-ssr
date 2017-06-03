@@ -1,15 +1,12 @@
 import React from 'react'
-import ReactDOM from 'react-dom'
-import { Provider } from 'react-redux'
+import ReactDOM from 'react-dom';
+import { Provider } from 'react-redux';
 import { BrowserRouter } from 'react-router-dom'
-
-import configureStore from './store'
-import './index.css'
+import configureStore from './stores/configureStores';
 import App from './containers/App'
+import registerServiceWorker from './registerServiceWorker';
 
-// Let the reducers handle initial state
-const initialState = {}
-const store = configureStore(initialState)
+const store = configureStore();
 
 ReactDOM.render(
   <Provider store={store}>
@@ -19,5 +16,4 @@ ReactDOM.render(
   </Provider>
 , document.getElementById('root')
 )
-
-
+registerServiceWorker();

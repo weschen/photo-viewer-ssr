@@ -1,23 +1,29 @@
 {
-  "name": "ssr-create-react-app-v2",
+  "name": "photo-viewer",
   "version": "0.1.0",
   "private": true,
   "devDependencies": {
     "babel-cli": "^6.24.1",
     "react-scripts": "0.8.5"
   },
+
   "dependencies": {
     "body-parser": "^1.17.1",
     "compression": "^1.6.2",
     "express": "^4.15.2",
     "ignore-styles": "^5.0.1",
     "morgan": "^1.8.1",
+
+    "prop-types": "^15.5.4",
     "react": "^15.5.4",
     "react-dom": "^15.5.4",
     "react-redux": "^5.0.4",
+    "react-router": "^4.1.1",
     "react-router-dom": "^4.1.1",
-    "redux": "^3.6.0"
+    "redux": "^3.6.0",
+    "redux-saga": "^0.15.3"
   },
+  
   "scripts": {
     "start": "react-scripts start",
     "start:server": "NODE_ENV=development node server/index.js",

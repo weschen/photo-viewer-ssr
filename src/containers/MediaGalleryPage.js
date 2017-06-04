@@ -64,6 +64,7 @@ export class MediaGalleryPage extends Component {
             </div>
           </div> : 'loading ....'}
       </div>
+
     );
   }
 }

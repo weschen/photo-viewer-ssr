@@ -1,5 +1,5 @@
 import React from 'react';
-import {Link} from 'react-router-dom';
+import {Link, Route} from 'react-router-dom';
 import PropTypes from 'prop-types'; 
 
 const PhotosPage = ({ images, onHandleSelectImage, selectedImage }) => (
@@ -7,11 +7,12 @@ const PhotosPage = ({ images, onHandleSelectImage, selectedImage }) => (
       {images.map(image => (
         <div key={image.id} onClick={onHandleSelectImage.bind(this, image)}
               className="card">
-          <Link to={'PhotoDetail/${image.id}'}>
+          <Link to={`/image/${image.id}`}>
             <img src={image.mediaUrl} alt={image.title} id={image.id}/>
           </Link>
         </div>
       ))}
+
     </div>
 );
 

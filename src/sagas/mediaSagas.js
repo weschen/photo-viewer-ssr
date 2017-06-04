@@ -2,7 +2,6 @@ import { put, call } from 'redux-saga/effects';
 import { searchImages } from '../Api/api';
 import * as types from '../constants/actionTypes';
 
-
 export default function* searchMediaSaga({ payload }) {
   try {
     //const images = yield call(flickrImages, payload);

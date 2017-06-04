@@ -1,5 +1,5 @@
 import React from 'react';
-import {Link, Route} from 'react-router-dom';
+import {Link} from 'react-router-dom';
 import PropTypes from 'prop-types'; 
 
 const PhotosPage = ({ images, onHandleSelectImage, selectedImage }) => (
@@ -12,7 +12,6 @@ const PhotosPage = ({ images, onHandleSelectImage, selectedImage }) => (
           </Link>
         </div>
       ))}
-
     </div>
 );
 

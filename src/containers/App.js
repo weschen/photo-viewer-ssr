@@ -11,7 +11,7 @@ class App extends Component {
       <div>
           <Switch>
             <Route exact path="/" component={MediaGalleryPage} />
-            <Route path='/image/:number' component={PhotoDetail}/>
+            <Route path='/image/:imageId' component={PhotoDetail}/>
             <Route component={NotFound}/>
           </Switch>
       </div>

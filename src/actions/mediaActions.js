@@ -1,8 +1,8 @@
 import * as types from '../constants/actionTypes';
 
-export const selectImageAction = (image) => ({
+export const selectImageAction = (imageId) => ({
   type: types.SELECTED_IMAGE,
-  image
+  imageId
 });
 
 export const searchMediaAction = (payload) => ({

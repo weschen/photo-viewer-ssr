@@ -5,7 +5,7 @@ import {
   selectImageAction, searchMediaAction
 } from '../actions/mediaActions';
 import PhotosPage from '../components/PhotosPage';
-import '../styles/style.css';
+
 
 export class MediaGalleryPage extends Component {
   constructor() {
@@ -16,6 +16,7 @@ export class MediaGalleryPage extends Component {
 
   componentDidMount() {
     this.props.dispatch(searchMediaAction('rain'));
+    this.query.value = 'rain';
   }
 
   handleSelectImage(selectedImage) {
@@ -26,40 +27,42 @@ export class MediaGalleryPage extends Component {
     event.preventDefault();
     if (this.query !== null) {
       this.props.dispatch(searchMediaAction(this.query.value));
-      this.query.value = '';
     }
   }
 
   render() {
     const { images, selectedImage } = this.props;
     return (
-      <div className="container-fluid">
-        {images && selectedImage ? <div>
-          <div className="search-bar">
-            <div className="input-group">
-              <input
-                type="text"
-                className="form-control" 
-                ref={ref => (this.query = ref)}
-              />
-              <span className="input-group-btn">
+       <div>
+          <div id="title-bar">
+            <span id="title">
+              Image Library
+            </span>
+            <div className="search-bar">
                 <input
-                  type="submit"
-                  className="btn btn-primary"
-                  value="Search"
-                  onClick={this.handleSearch}
+                  type="text"
+                  className="form-control" 
+                  ref={ref => (this.query = ref)}
                 />
-              </span>
+                <input
+                    type="submit"
+                    className="btn"
+                    value="Search"
+                    onClick={this.handleSearch}
+                />
             </div>
           </div>
-          <div className="row">
-            <PhotosPage
-              images={images}
-              selectedImage={selectedImage}
-              onHandleSelectImage={this.handleSelectImage}
-            />
-          </div>
-        </div> : 'loading ....'}
+
+        {images && selectedImage ? 
+          <div>
+            <div className="row">
+              <PhotosPage
+                images={images}
+                selectedImage={selectedImage}
+                onHandleSelectImage={this.handleSelectImage}
+              />
+            </div>
+          </div> : 'loading ....'}
       </div>
     );
   }

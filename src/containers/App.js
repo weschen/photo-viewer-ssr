@@ -1,14 +1,17 @@
 import React, { Component } from 'react';
 import { Switch, Route } from 'react-router-dom'
-import PropTypes from 'prop-types'; 
-import Header from '../common/Header';
-import '../styles/bootstrap.css';
+import MediaGalleryPage from '../containers/MediaGalleryPage';
+import NotFound from '../components/NotFound';
+import '../styles/style.css';
 
 class App extends Component {
   render() {
     return (
-      <div className="container-fluid text-center">
-        <Header/>
+      <div>
+          <Switch>
+            <Route exact path="/" component={MediaGalleryPage} />
+            <Route component={NotFound}/>
+          </Switch>
       </div>
     );
   }

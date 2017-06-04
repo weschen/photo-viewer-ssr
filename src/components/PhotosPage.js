@@ -1,22 +1,18 @@
 import React from 'react';
+import {Link} from 'react-router-dom';
 import PropTypes from 'prop-types'; 
 
 const PhotosPage = ({ images, onHandleSelectImage, selectedImage }) => (
-  <div className="col-md-12">
-    <div className="selected-image">
-      <div key={selectedImage.id}>
-        <h6 className="title">{selectedImage.title}</h6>
-        <img src={selectedImage.mediaUrl} alt={selectedImage.title} />
-      </div>
-    </div>
-    <div className="image-thumbnail">
+    <div className="card-container">
       {images.map(image => (
-        <div key={image.id} onClick={onHandleSelectImage.bind(this, image)}>
-          <img src={image.mediaUrl} alt={image.title} id={image.id}/>
+        <div key={image.id} onClick={onHandleSelectImage.bind(this, image)}
+              className="card">
+          <Link to={'PhotoDetail/${image.id}'}>
+            <img src={image.mediaUrl} alt={image.title} id={image.id}/>
+          </Link>
         </div>
       ))}
     </div>
-  </div>
 );
 
 PhotosPage.propTypes = {
